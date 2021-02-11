@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Params" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="abefa8bf-b217-4978-9fd3-5557a02b7fa2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgresAdami "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="String" class="java.lang.String"/>
+	<parameter name="Integer" class="java.lang.Integer"/>
+	<parameter name="Float" class="java.lang.Float" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[select * from artiste]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="artiste"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="artiste"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="30" width="100" height="30" uuid="a566b649-ff40-4512-9933-772f76013bb0"/>
+				<textFieldExpression><![CDATA[$P{String}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="26" width="100" height="30" uuid="e4af1ac8-176c-464b-8d56-5894c310e852"/>
+				<textFieldExpression><![CDATA[$P{Integer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="28" width="100" height="30" uuid="98ffa6ef-44e7-4de2-9f92-97af084148cb"/>
+				<textFieldExpression><![CDATA[$P{Float}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="278" height="24" uuid="f5dd8499-f1f0-4442-a813-99248b07bb22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6d8068ff-9851-454d-9c44-95b08cb78114"/>
+				</reportElement>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="0" width="277" height="24" uuid="85d6e8d7-67cb-4959-b16d-b8e486d0b396">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06eeb07f-060b-4dd6-a6e9-08956a4c7ad3"/>
+				</reportElement>
+				<text><![CDATA[name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="278" height="33" uuid="8a7740a9-e7a3-4a76-bbbb-f574e293f188">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6d8068ff-9851-454d-9c44-95b08cb78114"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="0" width="277" height="33" uuid="c6b0d22b-8689-4ee7-87df-2130af03151d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06eeb07f-060b-4dd6-a6e9-08956a4c7ad3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

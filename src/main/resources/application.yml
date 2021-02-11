@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    show-sql: true
+    
+
+app:
+  report-folder: /home/dthibau/Conseil/Adami/workspace/pocjasper/reports/
+
+logging:
+  level:
+    '[fr.adami]': debug
+
+---
+spring:
+  config.activate.on-profile: postgres
+ 
+  datasource:
+    url: 'jdbc:postgresql://localhost:5434/f_adami'
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update  
