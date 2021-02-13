@@ -18,5 +18,7 @@ public class ApplicationProperties {
 	@Pattern(regexp=".*/")
 	private String reportFolder;
 	
+	private long refreshRate=10000;
+	
 
 }

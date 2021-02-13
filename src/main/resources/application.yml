@@ -5,6 +5,7 @@ spring:
 
 app:
   report-folder: /home/dthibau/Conseil/Adami/workspace/pocjasper/reports/
+  refresh-rate: 20000
 
 logging:
   level:

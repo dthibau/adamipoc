@@ -51,7 +51,7 @@ public class ReportLoader {
 		return report;
 	}
 	
-	@Scheduled(fixedRate = 10000)
+	@Scheduled(fixedRateString = "${app.refresh-rate}")
 	public void browseFolder() {
 		logger.debug("browse report directory " + appProperties.getReportFolder());
 		Stream.of(new File(appProperties.getReportFolder()).listFiles())
