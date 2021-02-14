@@ -4,6 +4,9 @@ import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.sql.DataSource;
 import javax.validation.Valid;
@@ -14,6 +17,7 @@ import org.springframework.core.io.InputStreamSource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +34,7 @@ import net.sf.jasperreports.engine.JasperReport;
 @RequestMapping("/api/reports")
 public class GenerateRapportController {
 
+
 	@Autowired
 	ReportLoader reportLoader;
 	
@@ -39,7 +44,14 @@ public class GenerateRapportController {
 	@Autowired
 	DataSource datasource;
 	
-	
+	@GetMapping
+	public Map<String,Date> getCompiledReports() {
+		Map<String, Long> modified = reportLoader.getModified();
+		Map<String, Date> ret = new HashMap<>();
+		modified.keySet().stream().forEach(k-> ret.put(k, new Date(modified.get(k))));
+		
+		return ret;
+	}
 	
 	@PostMapping
 	public ResponseEntity<InputStreamSource> generate(@Valid @RequestBody RapportDto rapport) throws JRException, SQLException, FileNotFoundException {

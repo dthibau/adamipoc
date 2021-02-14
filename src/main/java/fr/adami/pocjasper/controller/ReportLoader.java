@@ -51,6 +51,14 @@ public class ReportLoader {
 		return report;
 	}
 	
+	
+	
+	public HashMap<String, Long> getModified() {
+		return modified;
+	}
+
+
+
 	@Scheduled(fixedRateString = "${app.refresh-rate}")
 	public void browseFolder() {
 		logger.debug("browse report directory " + appProperties.getReportFolder());

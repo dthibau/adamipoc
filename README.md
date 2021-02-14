@@ -1,5 +1,11 @@
 - Poc Jasper/Adami
 
+Build :
+- ./mvnw package 
+
+Exécution :
+java -jar target/pocjasper-<version>.jar --app.report-folder=<report's directory>
+
 Le poc parcourt régulièrement le répertoire ${app.report-folder} et tente de compiler les nouveaux fichiers et les fichiers modifiés
 Le résultat de la compilation ainsi que la date de modification des fichiers est mis en cache (HashMap)
 
@@ -9,6 +15,7 @@ API Rest : voir swagger http://localhost:8080/swagger-ui.html
 (le paramètre format n'est pas utilisé)
 
 Modèle de données : Base Hsql générée automatiquement et initialisé avec src/main/resources/import.sql
+Profil postres testé avec base locale postgres
 
 
 Exemples du Répertoire de publication Jasper :  
