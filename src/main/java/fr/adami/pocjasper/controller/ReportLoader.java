@@ -63,6 +63,7 @@ public class ReportLoader {
 	public void browseFolder() {
 		logger.debug("browse report directory " + appProperties.getReportFolder());
 		Stream.of(new File(appProperties.getReportFolder()).listFiles())
+		   .filter(f -> f.getName().endsWith(".jrxml"))
 		   .filter(f -> compiledReports.get(f.getName()) == null || f.lastModified() != modified.get(f.getName()))
 		   .forEach(f -> { 
 			   try {
