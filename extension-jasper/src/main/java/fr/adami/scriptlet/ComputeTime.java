@@ -18,5 +18,16 @@ public class ComputeTime extends JRDefaultScriptlet {
 		long now = System.currentTimeMillis();
 		return new Long(now - reportInitTime);
 	}
+	
+	
+	public String reverse(String s) {
+		StringBuffer sbf = new StringBuffer();
+		
+		for ( int i=s.length()-1; i >=0; i-- ) {
+			sbf.append(s.charAt(i));
+		}
+		
+		return sbf.toString();
+	}
 
 }
