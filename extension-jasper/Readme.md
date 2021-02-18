@@ -3,7 +3,7 @@ Projet Extension Jasper via Scriptlet
 
 Ce projet démontre l'utilisation d'un scriptlet dans un rapport.
 
-Build du projet : ./mvnw clean package
+Build du projet demo : ./mvnw -Pdemo clean package
 (Compilation Java + compilation Rapports Jasper + packaging jar complet)
 
 
