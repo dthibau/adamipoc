@@ -10,7 +10,12 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="43" y="30" width="427" height="30" uuid="e4e7e92b-737e-49d4-af98-b9e591db6335"/>
+				<textFieldExpression><![CDATA["David à l'envers est : " + $P{ComputeTime_SCRIPTLET}.reverse( "David" )]]></textFieldExpression>
+			</textField>
+		</band>
 	</title>
 	<pageHeader>
 		<band height="35" splitType="Stretch"/>
