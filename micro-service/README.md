@@ -25,4 +25,21 @@ Exemples du Répertoire de publication Jasper :
 curl -X POST "http://localhost:8080/api/reports" -H  "accept: */*" -H  "Content-Type: application/json" -d "{\"name\":\"Params\",\"params\":{\"String\":\"Une belle String\",\"Integer\":1},\"format\":\"pdf\"}" > result2.pdf
 
 - Rapport avec Ressources
+Le rapport Ressources références plusieurs ressources externes au fichier jrxml :
+- Un fichier de style
+- Des images au format (svg, png, jpg)
+- Une police spécifique Gentium
+- Un sous-rapport
+
+**Toutes les référénces à ces fichiers indiquées dans le .jrxml sont relatives**
+
+Pas de souci pour le fichier de style
+Pour le format SVG nécessite la librairie Batik
+Pour l'utilisation d'une police spécifique, la police Gentium a été packagée à partir de JasperStudio. (Voir https://community.jaspersoft.com/wiki/custom-font-font-extension#Import_the_Font_Extension) puis mis sous forme de jar dans le classpath (Gentium.jar)
+Attention dans jas bien s'assurer que la propriété :
+net.sf.jasperreports.extension.simple.font.families.**Gentium**=lobstertwo/fonts.xml correspond au nom utilisé dans le jrxml
+Pas de souci pour le sous-rapport ....
+
+
+
 

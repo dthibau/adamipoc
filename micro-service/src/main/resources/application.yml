@@ -4,12 +4,13 @@ spring:
     
 
 app:
-  report-folder: /home/dthibau/Conseil/Adami/workspace/pocjasper/reports/
+  report-folder: /home/dthibau/Conseil/Adami/workspace/pocjasper/micro-service/reports/
   refresh-rate: 20000
 
 logging:
   level:
     '[fr.adami]': debug
+#    '[net.sf.jasperreports]': debug
 
 ---
 spring:

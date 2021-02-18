@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+  <fontFamily name="Gentium">
+    <normal>fonts/Gentium/GenR102.TTF</normal>
+    <italic>fonts/Gentium/GenI102.TTF</italic>
+    <exportFonts>
+    </exportFonts>
+  </fontFamily>
+
+</fontFamilies>

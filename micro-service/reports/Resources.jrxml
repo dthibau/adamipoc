@@ -4,8 +4,11 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgresAdami "/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<template><![CDATA["./reports/style/style.jrtx"]]></template>
+	<parameter name="TableName" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Artiste"]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[select * from artiste]]>
+		<![CDATA[select * from  $P!{TableName}]]>
 	</queryString>
 	<field name="id" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -21,7 +24,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="191" splitType="Stretch">
 			<staticText>
 				<reportElement style="Rouge" x="40" y="24" width="100" height="30" uuid="f34bc666-e9d4-47d7-8132-551864b8cbcb"/>
 				<text><![CDATA[Texte Statique]]></text>
@@ -29,6 +32,21 @@
 			<image>
 				<reportElement x="340" y="10" width="50" height="50" uuid="a57dac21-9cde-4b4e-a657-641843b75bee"/>
 				<imageExpression><![CDATA["./reports/img/logo.svg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="198" y="75" width="222" height="30" uuid="cb9cab78-6a7a-402d-b705-e9d9915c8775"/>
+				<textElement>
+					<font fontName="Gentium" size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Texte Police Gentium]]></text>
+			</staticText>
+			<image>
+				<reportElement x="30" y="120" width="50" height="50" uuid="582f5fb1-a0c7-4274-ae8f-97105c6be717"/>
+				<imageExpression><![CDATA["./reports/img/page_excel.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="310" y="120" width="70" height="50" uuid="a137aefa-f30b-4d6a-a19e-21f8929fb2f5"/>
+				<imageExpression><![CDATA["./reports/img/beach.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -39,20 +57,38 @@
 		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="63" splitType="Stretch">
 			<textField>
-				<reportElement x="113" y="35" width="100" height="30" uuid="51d1f7b9-2d2e-4561-a168-16b684946e3c"/>
+				<reportElement x="30" y="10" width="100" height="30" uuid="51d1f7b9-2d2e-4561-a168-16b684946e3c"/>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
+			<subreport>
+				<reportElement x="204" y="0" width="371" height="50" uuid="84005082-123d-4842-b87b-90d01ffc61d5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["./reports/subreport/subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="0" y="62" width="555" height="1" forecolor="#A2EFF5" uuid="7cf302c6-21c7-4c0f-9ea9-895d22e62e03">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="169" y="0" width="1" height="63" uuid="dab222ff-47a3-41d2-9efe-4695ecfda54b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.element.name" value="Ligne verticale"/>
+				</reportElement>
+			</line>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="222" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="0" width="230" height="30" uuid="b98f621e-90e8-430d-b825-68950f8c1858"/>
+				<text><![CDATA[Résumé :]]></text>
+			</staticText>
+		</band>
 	</summary>
 </jasperReport>
