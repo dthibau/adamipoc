@@ -19,10 +19,10 @@ Profil postres testé avec base locale postgres
 
 
 Exemples du Répertoire de publication Jasper :  
-- Rapport Simple : curl -X POST "http://localhost:8080/api/reports" -H  "accept: */*" -H  "Content-Type: application/json" -d "{\"name\":\"Simple\",\"format\":\"pdf\"}"> result.pdf
+- Rapport Simple : curl -X POST "http://localhost:8080/api/reports" -H  "Content-Type: application/json" -d "{\"name\":\"Simple\",\"format\":\"pdf\"}"> result.pdf
 
 - Rapport avec Paramètres : 
-curl -X POST "http://localhost:8080/api/reports" -H  "accept: */*" -H  "Content-Type: application/json" -d "{\"name\":\"Params\",\"params\":{\"String\":\"Une belle String\",\"Integer\":1},\"format\":\"pdf\"}" > result2.pdf
+curl -X POST "http://localhost:8080/api/reports" -H  "Content-Type: application/json" -d "{\"name\":\"Params\",\"params\":{\"String\":\"Une belle String\",\"Integer\":1},\"format\":\"pdf\"}" > result2.pdf
 
 - Rapport avec Ressources
 Le rapport Ressources références plusieurs ressources externes au fichier jrxml :
